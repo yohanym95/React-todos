@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import '../App.css'
 import { Container, Form, Button } from 'react-bootstrap'
 
-const AddTodo = () => {
+const AddTodo = props => {
   const [input, setInput] = useState(null)
 
   const formHandler = e => {
@@ -13,6 +13,7 @@ const AddTodo = () => {
   const submitHandler = e => {
     e.preventDefault()
     if (input.length > 3) {
+      props.submitHandler(input)
     } else {
     }
   }
